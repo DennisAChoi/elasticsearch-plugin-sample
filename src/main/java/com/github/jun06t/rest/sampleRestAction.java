@@ -16,10 +16,10 @@ import org.elasticsearch.rest.RestChannel;
 import org.elasticsearch.rest.RestController;
 import org.elasticsearch.rest.RestRequest;
 
-public class IndexCountRestAction extends BaseRestHandler {
+public class sampleRestAction extends BaseRestHandler {
 
     @Inject
-    public IndexCountRestAction(final Settings settings, final Client client,
+    public sampleRestAction(final Settings settings, final Client client,
             final RestController controller) {
         super(settings, controller, client);
 
@@ -37,7 +37,7 @@ public class IndexCountRestAction extends BaseRestHandler {
             builder.startObject();
             builder.field("index", request.param("index"));
             builder.field("type", request.param("type"));
-            builder.field("description", "This is a elasticsearch-indexcount response: "
+            builder.field("description", "This is a elasticsearch-sample response: "
                     + new Date().toString());
             builder.endObject();
             channel.sendResponse(new BytesRestResponse(OK, builder));
