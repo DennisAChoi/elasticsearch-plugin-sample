@@ -1,0 +1,22 @@
+apply plugin: 'java'
+
+version = '1.0'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile 'org.elasticsearch:elasticsearch:2.2.0'
+}
+
+task buildPluginZip(type: Zip, dependsOn:[':jar']) {
+    baseName = 'elasticsearch-sample'
+    classifier = 'plugin'
+    from files(libsDir)
+}
+
+// define artifacts
+artifacts {
+    archives buildPluginZip
+}
