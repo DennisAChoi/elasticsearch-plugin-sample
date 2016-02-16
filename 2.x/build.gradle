@@ -14,6 +14,7 @@ task buildPluginZip(type: Zip, dependsOn:[':jar']) {
     baseName = 'elasticsearch-sample'
     classifier = 'plugin'
     from files(libsDir)
+    from 'src/main/resources/plugin-metadata'
 }
 
 // define artifacts
