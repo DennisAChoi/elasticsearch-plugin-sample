@@ -10,6 +10,10 @@ dependencies {
     compile 'org.elasticsearch:elasticsearch:2.2.0'
 }
 
+task wrapper(type: Wrapper) {
+    gradleVersion = '2.11'
+}
+
 task buildPluginZip(type: Zip, dependsOn:[':jar']) {
     baseName = 'elasticsearch-sample'
     classifier = 'plugin'
